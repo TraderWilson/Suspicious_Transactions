@@ -44,7 +44,10 @@ CREATE TABLE "transactions" (
     "date" TIMESTAMP   NOT NULL,
     "amount" FLOAT   NOT NULL,
     "card" VARCHAR(20)   NOT NULL,
-    "id_merchant" int   NOT NULL
+    "id_merchant" int   NOT NULL,
+    CONSTRAINT "pk_transactions" PRIMARY KEY (
+        "id"
+     )
 );
 
 ALTER TABLE "credit_card" ADD CONSTRAINT "fk_credit_card_cardholder_id" FOREIGN KEY("cardholder_id")
